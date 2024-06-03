@@ -7,6 +7,7 @@
     "dev": "nodemon -r dotenv/config server.js",
     "start": "node -r dotenv/config server.js",
     "test": "jest --setupFiles dotenv/config",
+    "test:file": "func() { jest ${1}.test.js --setupFiles dotenv/config; }; func",
     "test:cov": "jest --setupFiles dotenv/config --coverage"
   },
   "author": "",
