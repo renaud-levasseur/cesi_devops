@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  cesi_bdd:
+    container_name: ctn_cesi_bdd
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: TOOR
+      MARIADB_DATABASE: cesi
+      MARIADB_USER: roger
+      MARIADB_PASSWORD: regor
+
+  adminer:
+    container_name: ctn_cesi_adminer
+    image: adminer
+    ports:
+      - 3307:8080
