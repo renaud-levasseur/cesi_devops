@@ -18,7 +18,8 @@ jobs:
             - name: Run test
               run: echo Hello le test
 
-    routage:
+    routage_main:
+        needs: [hello]
         runs-on: ubuntu-latest
 
         steps:
@@ -34,3 +35,31 @@ jobs:
               
             - name: Test Main router
               run: npm run test:file main_route
+
+    routage_user:
+        needs: [routage_main]
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Setup node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18.x
+    
+            - name: Install Dep
+              run: npm i
+                    
+            - name: Test Main router
+              run: npm run test:file user_route
+
+    simul:
+        needs: [routage_user]
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Just Simul Deploy
+              run: echo Deploy
