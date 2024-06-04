@@ -19,6 +19,7 @@ jobs:
               run: echo Hello le test
 
     routage:
+        needs: [hello]
         runs-on: ubuntu-latest
 
         steps:
