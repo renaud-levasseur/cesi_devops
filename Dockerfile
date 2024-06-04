@@ -6,4 +6,6 @@ WORKDIR /app
 RUN npm i --omit=dev
 
 EXPOSE 15000
+
+USER node
 CMD npm run start
