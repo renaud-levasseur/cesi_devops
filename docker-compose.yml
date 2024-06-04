@@ -14,7 +14,7 @@ services:
 
   cesi_api:
     container_name: ctn_cesi_api
-    image: ratatouf:latest
+    image: senseo/ratatouf:latest
     restart: always
     depends_on:
       - cesi_bdd
