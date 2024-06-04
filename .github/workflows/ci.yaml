@@ -75,8 +75,11 @@ jobs:
     
             - name: Install Dep
               run: npm i
+
+            - name: Populate Table
+              run: npm run test:file init_bdd
                     
-            - name: Test Main router
+            - name: Test User router
               run: npm run test:file user_route
 
     simul:
