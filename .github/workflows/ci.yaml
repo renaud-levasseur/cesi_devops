@@ -83,12 +83,6 @@ jobs:
             - name: Test User router
               run: npm run test:file user_route
 
-    simul:
+    canary:
         needs: [routage_user]
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-            - name: Just Simul Deploy
-              run: echo Deploy
+        uses: ./.github/workflows/canary.yaml
