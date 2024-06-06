@@ -23,7 +23,7 @@ jobs:
                 context: .
                 file: ./Dockerfile
                 push: true
-                tags: 'latest'
+                tags: latest
 
     compose:
         needs: [push]
