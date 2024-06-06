@@ -68,5 +68,5 @@ jobs:
                 password: ${{ secrets.PROD_PASS }}
 
                 script: |
-                  docker pull renslvsr/ratatouf:latest
+                  docker pull renslvsr/ratatouf:main
                   docker-compose up -d
